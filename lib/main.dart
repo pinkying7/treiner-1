@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.green[900],
       ),
       home: LandingPage(),
+      initialRoute: '/',
       routes: {
         CoachFindJobs.route: (context) => CoachFindJobs(),
         CoachSessions.route: (context) => CoachSessions(),

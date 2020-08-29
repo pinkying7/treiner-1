@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:treiner/Coach/coach_jobdesc.dart';
+import 'package:treiner/Player/player_book.dart';
 
 // Job Listing Class
 class JobListing extends StatelessWidget {
@@ -46,7 +48,7 @@ class MyMenu extends StatelessWidget {
         margin: EdgeInsets.all(9.0),
         child: InkWell(
           onTap: () => Navigator.pushNamed(context, route),
-          splashColor: Colors.green,
+          splashColor: Color(0xFF006944),
           child: Center(
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -54,7 +56,7 @@ class MyMenu extends StatelessWidget {
                 Icon(
                   icon,
                   size: 50.0,
-                  color: shape,
+                  color: Colors.green[900],
                 ),
                 Text(title, style: new TextStyle(fontSize: 24.0))
               ],
@@ -68,14 +70,15 @@ String setAppBarTitle(String title) {
   return title;
 }
 
+//Browse Jobs Card
 class JobCard extends StatelessWidget {
-  JobCard({this.title, this.icon, this.price, this.pageroute, this.shape});
+  JobCard({this.title, this.icon, this.price, this.shape, this.postedby});
 
+  final String postedby;
   final String title;
   final IconData icon;
   final String price;
   final MaterialColor shape;
-  final MaterialPageRoute pageroute;
 
   @override
   Widget build(BuildContext context) {
@@ -84,10 +87,18 @@ class JobCard extends StatelessWidget {
         child: InkWell(
           splashColor: Colors.green[900],
           onTap: () {
-            print('Card tapped.');
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => JobDescriptionPage(
+                          title: title,
+                          postedby: postedby,
+                          date: "9:00am Sun, 23rd August 2020",
+                          price: price,
+                        )));
           },
           child: Container(
-            width: 400,
+            width: 377,
             height: 200,
             child: Row(
               children: [
@@ -127,6 +138,7 @@ class JobCard extends StatelessWidget {
                                     fontWeight: FontWeight.bold)),
                           ),
                         ),
+                        Divider(),
                         SizedBox(
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -167,31 +179,100 @@ class JobCard extends StatelessWidget {
         ),
       ),
     );
-    /*Center(
+  }
+}
+
+class CoachCard extends StatelessWidget {
+  CoachCard({this.name, this.location, this.displayurl});
+
+  final String name;
+  final String location;
+  final String displayurl;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
       child: Card(
-          child: InkWell(
-        splashColor: Colors.green[900].withAlpha(30),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            ListTile(
-              title: Text(title,
-                  style:
-                      new TextStyle(fontSize: 18.0, color: Colors.green[900])),
-              leading: new Icon(
-                icon,
-                size: 80.0,
-                color: shape,
-              ),
-              subtitle: Text(subtitle),
-              trailing: CircleAvatar(
-                backgroundImage: NetworkImage("assets/avatar.jpg"),
-              ),
+        child: InkWell(
+          splashColor: Colors.green[900],
+          onTap: () {
+            /*
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        BookCoach(name: this.name, location: this.location)));*/
+          },
+          child: Container(
+            width: 377,
+            height: 200,
+            child: Row(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    CircleAvatar(
+                      radius: 70.0,
+                      backgroundColor: Colors.green[900],
+                      child: CircleAvatar(
+                        radius: 65,
+                        backgroundColor: Colors.white,
+                        backgroundImage: AssetImage("${this.displayurl}"),
+                      ),
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(this.name,
+                                style: new TextStyle(
+                                    fontSize: 18.0,
+                                    color: Colors.green[900],
+                                    fontWeight: FontWeight.bold)),
+                          ),
+                        ),
+                        SizedBox(
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              children: <Widget>[
+                                Icon(Icons.location_on, size: 20),
+                                Text("Melbourne Australia",
+                                    style: new TextStyle(
+                                      fontSize: 12.0,
+                                      color: Colors.green[900],
+                                    )),
+                              ],
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              children: <Widget>[
+                                Icon(Icons.calendar_today, size: 20),
+                                Text("5 Star Rating",
+                                    style: new TextStyle(
+                                      fontSize: 12.0,
+                                      color: Colors.green[900],
+                                    )),
+                              ],
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
+                )
+              ],
             ),
-          ],
+          ),
         ),
-      )),
-    );*/
-    throw UnimplementedError();
+      ),
+    );
   }
 }

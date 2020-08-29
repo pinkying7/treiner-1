@@ -12,28 +12,31 @@ class BrowseJobs extends StatelessWidget {
             child: ListView(
           children: [
             JobCard(
-              title: "Winger Specific Training",
-              price: "\$20.00",
-            ),
+                title: "Winger Specific Training",
+                price: "\$20.00",
+                postedby: "Evan Yashumov"),
             JobCard(
-              title: "Ball Mystery for 10 Year Old Boy",
-              price: "\$40.00",
+                title: "Ball Mystery for 10",
+                price: "\$40.00",
+                postedby: "Janaki Shah"),
+            JobCard(
+                title: "1v1 Defending Target",
+                price: "\$30.00",
+                postedby: "Shehrose Shabbir"),
+            JobCard(
+              title: "General Fitness",
+              price: "\$10.00",
+              postedby: "Sergey Yashumov",
             ),
             JobCard(
               title: "General Fitness",
               price: "\$10.00",
+              postedby: "Guest",
             ),
             JobCard(
               title: "General Fitness",
               price: "\$10.00",
-            ),
-            JobCard(
-              title: "General Fitness",
-              price: "\$10.00",
-            ),
-            JobCard(
-              title: "General Fitness",
-              price: "\$10.00",
+              postedby: "Mel Beecroft",
             ),
           ],
         )));
