@@ -1,6 +1,6 @@
 # treiner
 
-A new Flutter project.
+Treiner Project
 
 ## Getting Started
 
