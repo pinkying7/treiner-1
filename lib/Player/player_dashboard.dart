@@ -22,7 +22,7 @@ class PlayerDashboard extends StatelessWidget{
                  accountEmail: Text("admin@treiner.io"),
                  accountName: Text("Coach"),
                  decoration: BoxDecoration(
-                   color: Colors.green
+                   color: :00Colors.green
                  ),
                   currentAccountPicture: CircleAvatar(
                     backgroundColor: Colors.grey,
