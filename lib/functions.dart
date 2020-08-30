@@ -98,6 +98,7 @@ class JobCard extends StatelessWidget {
                         )));
           },
           child: Container(
+            margin: EdgeInsets.only(left: 10.0),
             width: 377,
             height: 200,
             child: Row(
@@ -204,6 +205,7 @@ class CoachCard extends StatelessWidget {
                         BookCoach(name: this.name, location: this.location)));*/
           },
           child: Container(
+            margin: EdgeInsets.only(left: 10.0),
             width: 377,
             height: 200,
             child: Row(

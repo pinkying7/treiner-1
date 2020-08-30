@@ -5,6 +5,7 @@ import 'package:treiner/Coach/coach_findjob.dart';
 import 'package:treiner/Coach/coach_browse.dart';
 import 'package:treiner/Player/player_dashboard.dart';
 import 'package:treiner/Player/player_findcoach.dart';
+import 'package:treiner/Sessions/requestSession.dart';
 import 'package:treiner/Sessions/session_completed.dart';
 import 'package:treiner/Sessions/session_meetings.dart';
 import 'package:treiner/Sessions/session_upcoming.dart';
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
         BookCoach.route: (context) => BookCoach(),
         BookSession.route: (context) => BookSession(),
         PlayerDashboard.route: (context) => PlayerDashboard(),
+        RequestSession.route: (context) => RequestSession(),
       },
     );
   }

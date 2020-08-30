@@ -80,6 +80,20 @@ class JobDescriptionPage extends StatelessWidget {
             ),
             Card(
               child: ListTile(
+                  title: Text("Job Budget"),
+                  subtitle: Row(
+                    children: [
+                      Text("${this.price}",
+                          style: new TextStyle(
+                              fontSize: 22.0,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold)),
+                      Text(" per hour")
+                    ],
+                  )),
+            ),
+            Card(
+              child: ListTile(
                 title: Text("Post your comment"),
                 subtitle: TextField(
                   decoration: new InputDecoration(
@@ -92,20 +106,6 @@ class JobDescriptionPage extends StatelessWidget {
                       )),
                 ),
               ),
-            ),
-            Card(
-              child: ListTile(
-                  title: Text("Job Budget"),
-                  subtitle: Row(
-                    children: [
-                      Text("${this.price}",
-                          style: new TextStyle(
-                              fontSize: 22.0,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold)),
-                      Text(" per hour")
-                    ],
-                  )),
             ),
             MyMenu(
               title: "Make Offer",
@@ -179,7 +179,5 @@ class JobDescriptionPage extends StatelessWidget {
         ),
       ),
     );*/
-    // ignore: dead_code
-    throw UnimplementedError();
   }
 }
