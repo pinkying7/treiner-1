@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:treiner/Coach/coach_jobdesc.dart';
-import 'package:treiner/Player/player_book.dart';
 
 // Job Listing Class
 class JobListing extends StatelessWidget {
@@ -56,7 +55,7 @@ class MyMenu extends StatelessWidget {
                 Icon(
                   icon,
                   size: 50.0,
-                  color: Colors.green[900],
+                  color: Color(0xFF006944),
                 ),
                 Text(title, style: new TextStyle(fontSize: 24.0))
               ],

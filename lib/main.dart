@@ -22,8 +22,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: new ThemeData(
-        primaryColor: Colors.green[900],
-      ),
+          primaryColor: Color(0xFF006944),
+          dialogBackgroundColor: Colors.white,
+          colorScheme: ColorScheme.light(primary: const Color(0xFF006944)),
+          buttonTheme: ButtonThemeData(textTheme: ButtonTextTheme.primary),
+          highlightColor: Colors.grey[400],
+          textSelectionColor: Colors.grey),
       home: LandingPage(),
       initialRoute: '/',
       routes: {
