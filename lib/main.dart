@@ -49,6 +49,8 @@ class MyApp extends StatelessWidget {
         BookSession.route: (context) => BookSession(),
         PlayerDashboard.route: (context) => PlayerDashboard(),
         RequestSession.route: (context) => RequestSession(),
+        MyCoachJobs.route: (context) => MyCoachJobs(),
+        MyJobs.route: (context) => MyJobs()
       },
     );
   }

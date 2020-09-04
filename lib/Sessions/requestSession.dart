@@ -1462,8 +1462,14 @@ class _SubmitSessionRequestState extends State<SubmitSessionRequest> {
                                       title: "Your job is ready to post",
                                       size: 24.0),
                                   SizedBox(
-                                    height: 50.0,
-                                    child: Divider(),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(25.0),
+                                      child: Image(
+                                        image: new AssetImage(
+                                            "assets/post-job-finish.png"),
+                                        height: 100,
+                                      ),
+                                    ),
                                   ),
                                   Row(
                                     children: [
@@ -1541,7 +1547,26 @@ class _SubmitSessionRequestState extends State<SubmitSessionRequest> {
                                       RaisedButton.icon(
                                         textColor: Colors.white,
                                         color: Color(0xFF006944),
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          showDialog(
+                                              context: context,
+                                              builder: (BuildContext context) {
+                                                return AlertDialog(
+                                                  title: Text(
+                                                      "Your job has been posted"),
+                                                  content: Text(
+                                                      "Your job has been posted for approval, you will be notified shortly."),
+                                                  actions: [
+                                                    FlatButton(
+                                                      child: Text("Okay"),
+                                                      onPressed: () {
+                                                        Navigator.pop(context);
+                                                      },
+                                                    )
+                                                  ],
+                                                );
+                                              });
+                                        },
                                         icon: Icon(Icons.send),
                                         label: Text("Submit Job"),
                                       ),

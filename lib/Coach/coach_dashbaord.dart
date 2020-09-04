@@ -61,6 +61,11 @@ class _CoachDashboard extends State<CoachDashboard> {
                 route: CoachFindJobs.route,
               ),
               MyMenu(
+                title: "My Job Applications",
+                icon: Icons.apps,
+                route: MyCoachJobs.route,
+              ),
+              MyMenu(
                 title: "Sessions",
                 icon: Icons.calendar_today,
                 route: CoachSessions.route,
@@ -85,6 +90,79 @@ class CoachContact extends StatelessWidget {
       appBar: AppBar(title: Text('Contact Us')),
       body: Center(
         child: Text('Contact Us'),
+      ),
+    );
+  }
+}
+
+class MyCoachJobs extends StatelessWidget {
+  static String route = '/myjobapps';
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('My Job Applications')),
+      body: Container(
+        padding: EdgeInsets.all(10.0),
+        child: ListView(
+          children: [
+            MyAppliedJobsWidget(),
+            MyAppliedJobsWidget(),
+            MyAppliedJobsWidget(),
+            MyAppliedJobsWidget(),
+            MyAppliedJobsWidget(),
+            MyAppliedJobsWidget(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class MyAppliedJobsWidget extends StatelessWidget {
+  const MyAppliedJobsWidget({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(5.0),
+      ),
+      elevation: 5.0,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          ListTile(
+            leading: Icon(Icons.work, size: 40.0, color: Color(0xFF006944)),
+            title: Text("JOB TITLE "),
+            subtitle: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("OFFERED PRICE"),
+                Text("JOB BUDGET"),
+                Text("STARTS AT"),
+                Text("LENGTH"),
+              ],
+            ),
+          ),
+          ButtonTheme.bar(
+            child: ButtonBar(
+              children: [
+                FlatButton(
+                  child: const Text('Edit'),
+                  onPressed: () {},
+                ),
+                FlatButton(
+                  child: const Text('Delete'),
+                  onPressed: () {},
+                ),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }
